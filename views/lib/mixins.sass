@@ -1,0 +1,74 @@
+// Quickly outline any tag for debug purposes
+=o
+  :background                             rgba(255, 0, 0, 0.15)   !important
+  :outline                                1px solid red           !important
+
+// CROSS BROWSER MIX-INS
+// Box model resizing
+=box-sizing(                              $box-sizing)
+  :-moz-box-sizing                        $box-sizing
+  :-webkit-box-sizing                     $box-sizing
+  :box-sizing                             $box-sizing
+
+// Opacity
+=opacity(                                 $opacity)
+  :-ms-filter                             unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=") + $opacity + unquote(")")
+  :filter                                 unquote("alpha(opacity=") + $opacity + unquote(")")
+  :opacity                                $opacity * 0.01
+
+// Transitions
+=transition(                              $transition)
+  :-moz-transition                        $transition
+  :-o-transition                          $transition
+  :-webkit-transition                     $transition
+  :transition                             $transition
+
+// Transforms
+=transform(                               $transform)
+  :-moz-transform                         $transform
+  :-o-transform                           $transform
+  :-webkit-transform                      $transform
+  :transform                              $transform
+
+// Multi-column layout
+=column-count(                            $count) // # of columns
+  :-moz-column-count                      $count
+  :-webkit-column-count                   $count
+  :column-count                           $count
+=column-gap(                              $gap) // Space between columns
+  :-moz-column-gap                        $gap
+  :-webkit-column-gap                     $gap
+  :column-gap                             $gap
+// Combine -count and -gap into one easy mixin  
+=columns(                                 $count, $gap)
+  +column-count(                          $count)  
+  +column-gap(                            $gap)
+
+// Box shadow
+=box-shadow(                              $shadow) // If you want to have multiple box shadows, you must enclose the values in quotes (" ").
+  $shadow:                                unquote($shadow)
+  :-moz-box-shadow                        $shadow
+  :-webkit-box-shadow                     $shadow
+  :box-shadow                             $shadow
+
+// Border radius
+=border-radius(                           $radius)
+  :-moz-border-radius                     $radius
+  :-webkit-border-radius                  $radius
+  :border-radius                          $radius
+=border-radius-top-left(                  $radius)
+  :-moz-border-radius-topleft             $radius
+  :-webkit-border-top-left-radius         $radius
+  :border-top-left-radius                 $radius
+=border-radius-top-right(                 $radius)
+  :-moz-border-radius-topright            $radius
+  :-webkit-border-top-right-radius        $radius
+  :border-top-right-radius                $radius
+=border-radius-bottom-right(              $radius)
+  :-moz-border-radius-bottomright         $radius
+  :-webkit-border-bottom-right-radius     $radius
+  :border-bottom-right-radius             $radius
+=border-radius-bottom-left(               $radius)
+  :-moz-border-radius-bottomleft          $radius
+  :-webkit-border-bottom-left-radius      $radius
+  :border-bottom-left-radius              $radius

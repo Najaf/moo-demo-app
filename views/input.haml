@@ -1,0 +1,19 @@
+%html
+  %head
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/styles.css' }
+  %body
+    #wrapper
+      #header
+        %h1 Print Anki Flashcards
+      #content
+        %h2 Step 2: Upload your anki deck
+        %p 
+          On ubuntu these are located in 
+          %code="~/.anki/decks"
+
+        %form{ :method => 'post', :action => '/pack', :enctype => "multipart/form-data"  }
+          %input{ :type => 'file', :name => 'file' }
+          %input{ :type  => 'submit',
+                  :value => 'Make cards' }
+
+

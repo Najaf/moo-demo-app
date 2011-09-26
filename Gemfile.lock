@@ -1,0 +1,49 @@
+GIT
+  remote: git://github.com/Najaf/moo.rb.git
+  revision: b5899c553706483fc7b3237f4b0d71d4a5012392
+  specs:
+    moo (0.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.6)
+    faraday (0.7.4)
+      addressable (~> 2.2.6)
+      multipart-post (~> 1.1.0)
+      rack (>= 1.1.0, < 2)
+    faraday_middleware (0.7.0)
+      faraday (~> 0.7.3)
+    hashie (1.1.0)
+    json (1.6.1)
+    multi_json (1.0.3)
+    multi_xml (0.4.0)
+    multipart-post (1.1.3)
+    nokogiri (1.5.0)
+    oauth (0.4.5)
+    rack (1.3.3)
+    simple_oauth (0.1.5)
+    sinatra (1.2.6)
+      rack (~> 1.1)
+      tilt (>= 1.2.2, < 2.0)
+    sqlite3 (1.3.4)
+    tilt (1.3.3)
+    twitter (1.7.2)
+      faraday (~> 0.7.4)
+      faraday_middleware (~> 0.7.0)
+      hashie (~> 1.1.0)
+      multi_json (~> 1.0.0)
+      multi_xml (~> 0.4.0)
+      simple_oauth (~> 0.1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  json
+  moo!
+  nokogiri
+  oauth
+  sinatra
+  sqlite3
+  twitter

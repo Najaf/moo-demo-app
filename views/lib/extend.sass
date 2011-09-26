@@ -1,0 +1,97 @@
+.zoom
+  :zoom                       1
+
+.no_content
+  :content                    ""
+
+.left
+  :float                      left
+
+.align_left
+  :text-align                 left
+
+.right
+  :float                      right
+
+.align_right
+  :text-align                 right
+
+.center
+  :text-align                 center
+
+.block
+  :display                    block
+
+.absolute
+  :position                   absolute
+
+.relative
+  :position                   relative
+
+.hidden
+  :overflow                   hidden
+
+.bold
+  :font-weight                bold
+
+.clear
+  :clear                      both
+
+.clearfix
+  @extend                     .zoom
+  &:after
+    @extend                   .clear
+    @extend                   .block
+    @extend                   .no_content
+
+// Replacing text with a background image
+.hide_text, .h
+  @extend                     .block
+  @extend                     .hidden
+  @extend                     .align_left
+  :text-indent               -999em
+  :white-space                nowrap
+  :.text-transform            capitalize
+
+// Reset some basic styling
+.xborder // Just kill border
+  :border                     0
+
+.xmargin // Just kill margin
+  :margin                     0
+
+.xpadding // Just kill padding
+  :padding                    0
+
+.xall
+  @extend                     .xborder
+  @extend                     .xmargin
+  @extend                     .xpadding
+
+// Consolidate fonts. Works with font $constants in lib/constants.
+.x-small
+  :font-size                  $x-small
+
+.small
+  :font-size                  $small
+
+.medium
+  :font-size                  $medium
+
+.x-medium
+  :font-size                  $x-medium
+
+.large
+  :font-size                  $large
+
+.x-large
+  :font-size                  $x-large
+
+.xx-large
+  :font-size                  $xx-large
+
+.huge
+  :font-size                  $huge
+
+.x-huge
+  :font-size                  $x-huge

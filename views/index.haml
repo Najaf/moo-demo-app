@@ -1,0 +1,16 @@
+%html
+  %head
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/styles.css' }
+  %body
+    #wrapper
+      #header
+        %h1 Print 100 Tweets on Minicards 
+      #content
+        %h2 Step 1: Get Authed
+        %p
+          %a{href: '/start_auth'} Click here to be authenticated with moo
+
+        %pre
+          =@pack.to_json
+
+
