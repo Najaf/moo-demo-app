@@ -1,8 +1,9 @@
 GIT
   remote: git://github.com/Najaf/moo.rb.git
-  revision: b5899c553706483fc7b3237f4b0d71d4a5012392
+  revision: 78f23c88026eeaba7930e9c0b52e6b4a781bed53
   specs:
-    moo (0.0.1)
+    moo (0.0.2)
+      oauth
 
 GEM
   remote: http://rubygems.org/
@@ -19,6 +20,7 @@ GEM
     multi_json (1.0.3)
     multi_xml (0.4.0)
     multipart-post (1.1.3)
+    oauth (0.4.5)
     rack (1.3.3)
     simple_oauth (0.1.5)
     sinatra (1.2.6)
@@ -38,6 +40,6 @@ PLATFORMS
 
 DEPENDENCIES
   json
-  moo!
+  moo (= 0.0.2)!
   sinatra
   twitter
