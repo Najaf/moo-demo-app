@@ -138,13 +138,31 @@ post '/pack' do
       p.sides = Twitter.user_timeline('alinajaf', count:100).map do |t|
         Side.new do |s|
           s.template_code = 'minicard_full_text_landscape'
-          s.type = 'details'
+          s.type = 'image'
           s.data << TextData.new do |text_data|
             text_data.link_id = 'back_line_1'
             text_data.text = t.text
           end
         end
       end
+
+      p.sides << Side.new do |s|
+        s.template_code = 'minicard_full_text_landscape'
+        s.type = 'details'
+        s.data << TextData.new do |text_data|
+          text_data.link_id = 'back_line_1'
+          text_data.text = '@alinajaf'
+        end
+      end
+
+      # need to do something automated about side numbering...
+      # maybe just stuff this before the 'to_json' call?
+      counter = 1
+      p.sides.each do |s|
+        s.side_num = counter
+        counter += 1
+      end
+
     end
     #json_obj = JSON.load(pack)
     #fresh_json = JSON.generate(json_obj)
