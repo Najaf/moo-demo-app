@@ -9,11 +9,11 @@ enable :sessions
 
 app_config = YAML::load_file('config.yml')['moo']
 
+# configure the moo client object to use my API key/secret
 Moo::Client.config do |c|
   c.oauth_key = app_config['key']
   c.oauth_secret = app_config['secret']
 end
-
 
 get '/' do
   haml :index
@@ -52,7 +52,7 @@ get '/callback' do
       s.type = 'details'
       s.data << TextData.new do |text_data|
         text_data.link_id = 'back_line_1'
-        text_data.text = '@alinajaf'
+        text_data.text = session[:twitter_handle]
       end
     end
 
