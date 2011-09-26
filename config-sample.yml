@@ -1,0 +1,8 @@
+# Sample Config file for demo app
+#
+# Rename this to 'config.yml' and ensure you don't commit it
+# into version control, because that would be dumb.
+moo :
+  key:    "key"
+  secret: "super secret"
+
