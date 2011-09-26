@@ -8,18 +8,24 @@ body
   :font-size 13px
 
 #header
-  :background-color #300
-  :padding 10px
-  :margin-bottom 20px
+  :width 800px
+  :margin 100px auto 20px auto
 
 #content
   :margin 0 auto
   :width 800px
   form
     :margin-top 20px
-    textarea, input
-      :display block
+    :text-align center
+    textarea, input[type="text"]
+      :font-size 3em
       :margin-bottom 10px
+      :color #999
+      :padding 5px
+      :border 1px solid #999
+      &:focus
+        :border 1px solid #333
+        +box-shadow(#333 0px 0px 7px)
     textarea
       :width 400px
       :padding 10px
@@ -28,18 +34,26 @@ body
       :border 1px solid #ccc
       :height 300px
     input[type=submit]
-      :font-size 20px
+      :font-size 2em
+      :padding 7px
+      :top -4px
+      :position relative
+      :color #666
 
 h1
   :font-family Helvetica
-  :color white
   :font-weight bold
-  :font-size 28px
+  :font-size 5em
+  :text-align center
+  :text-shadow #666 1px 1px 5px
+  :color #333
 
 h2
   :font-family Helvetica
   :font-size 30px
-  :color #900
+  :color #333
+  :background-color #eee
+  :padding 5px
+  :text-align center
   :margin-bottom 10px
-  :font-weight bold
   

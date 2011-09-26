@@ -4,13 +4,12 @@
   %body
     #wrapper
       #header
-        %h1 Print 100 Tweets on Minicards 
-      #content
-        %h2 Step 1: Get Authed
-        %p
-          %a{href: '/start_auth'} Click here to be authenticated with moo
+        %h1 Twitter Minicards
 
-        %pre
-          =@pack.to_json
+      #content
+        %h2 Make minicards with your last 100 tweets
+        %form{ method: 'post', action: '/pack'}
+          %input{ type: 'text', name: 'twitter-handle', value: '@alinajaf', autocomplete: 'off'}
+          %input{ type: 'submit', value: 'Make Minicards'}
 
 
